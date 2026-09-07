@@ -12,9 +12,9 @@ a{text-decoration:none;color:inherit}
 header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.95);backdrop-filter:blur(6px);border-bottom:1px solid #f5dbe4;display:flex;align-items:center;justify-content:space-between;padding:12px 18px}
 .logo{font-weight:800;font-size:18px;letter-spacing:-.5px}
 .logo span{color:#d84a7e}
-.nav{display:flex;gap:14px;font-size:14px;color:#7a5a68}
+.nav{display:flex;gap:12px;font-size:13px;color:#7a5a68}
 .nav a{padding:6px 2px}
-.hero{background:linear-gradient(135deg,#fbd3e0 0%,#fde9f1 45%,#fff 100%);padding:48px 24px 36px;text-align:center}
+.hero{background:linear-gradient(135deg,#fbd3e0 0%,#fde9f1 55%,#fff 100%);padding:48px 24px 36px;text-align:center}
 .badge{display:inline-block;background:#fff;border:1px solid #f3b8cc;color:#c73a6d;font-size:13px;padding:6px 12px;border-radius:999px;margin-bottom:14px}
 .hero h1{font-size:32px;line-height:1.25;letter-spacing:-1px;margin-bottom:10px}
 .hero h1 em{font-style:normal;color:#d84a7e}
@@ -32,11 +32,21 @@ section h2{font-size:20px;letter-spacing:-.5px;margin-bottom:6px}
 .card b{display:block;font-size:15px;margin-bottom:4px}
 .card small{color:#8a6a78;font-size:13px}
 .menu{border:1px solid #f5dbe4;border-radius:16px;overflow:hidden}
-.row{display:flex;justify-content:space-between;align-items:center;padding:14px 16px;border-bottom:1px solid #fdf0f4}
+.row{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:14px 16px;border-bottom:1px solid #fdf0f4}
 .row:last-child{border-bottom:0}
 .row .name{font-weight:700;font-size:15px}
 .row .desc{font-size:13px;color:#8a6a78;margin-top:2px}
 .price{font-weight:800;color:#d84a7e;white-space:nowrap;margin-left:12px}
+.tag{display:inline-block;font-size:11px;font-weight:700;background:#fef0f4;color:#c73a6d;border-radius:999px;padding:2px 8px;margin-left:6px;vertical-align:middle}
+.hours-box{border:1px solid #f5dbe4;border-radius:16px;overflow:hidden}
+.hours-table{width:100%;border-collapse:collapse;font-size:14px}
+.hours-table th,.hours-table td{padding:12px 14px;text-align:left;border-bottom:1px solid #fdf0f4}
+.hours-table tr:last-child th,.hours-table tr:last-child td{border-bottom:0}
+.hours-table th{background:#fef0f4;width:110px;font-weight:800}
+.hours-table td b{color:#d84a7e}
+.closed{color:#c73a6d;font-weight:800}
+.note{background:#fef0f4;border-radius:12px;padding:12px 14px;font-size:13px;color:#7a5a68;margin-top:12px}
+.note b{color:#3a2e39}
 .gallery{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
 .nail{aspect-ratio:1/1.15;border-radius:16px;display:flex;flex-direction:column;align-items:flex-end;justify-content:flex-end;padding:12px;color:#fff;font-weight:800;font-size:13px;text-shadow:0 1px 6px rgba(0,0,0,.25)}
 .n1{background:linear-gradient(160deg,#ffb3c8,#d84a7e)}
@@ -56,14 +66,14 @@ section h2{font-size:20px;letter-spacing:-.5px;margin-bottom:6px}
 .sticky-call{position:sticky;bottom:0;background:#fff;border-top:1px solid #f5dbe4;padding:12px 16px;display:flex;gap:10px}
 .sticky-call a{flex:1;text-align:center}
 footer{padding:18px;text-align:center;font-size:12px;color:#a88f9a}
-@media(max-width:480px){.cards{grid-template-columns:1fr}.hero h1{font-size:27px}}
+@media(max-width:480px){.cards{grid-template-columns:1fr}.hero h1{font-size:27px}.nav{font-size:12px;gap:8px}}
 </style>
 </head>
 <body>
 <div class="wrap">
 <header>
 <div class="logo">💅 <span>반짝네일</span></div>
-<nav class="nav"><a href="#menu">메뉴</a><a href="#gallery">스타일</a><a href="#info">오시는길</a></nav>
+<nav class="nav"><a href="#menu">메뉴</a><a href="#care">케어</a><a href="#hours">영업시간</a><a href="#info">오시는길</a></nav>
 </header>
 
 <div class="hero">
@@ -71,7 +81,7 @@ footer{padding:18px;text-align:center;font-size:12px;color:#a88f9a}
 <h1>손끝에서 시작되는<br><em>작은 행복</em>을 선물합니다</h1>
 <p>1:1 맞춤 상담 · 꼼꼼한 큐티클 케어 · 오래가는 젤네일 전문샵입니다.<br>예약은 전화 한 통이면 충분합니다.</p>
 <div class="cta-row">
-<a class="btn btn-call" href="tel:010-1234-5678">📞 전화로 예약하기</a>
+<a class="btn btn-call" href="tel:010-0000-0000">📞 전화로 예약하기</a>
 <button class="btn btn-sub" id="copyBtn" type="button">번호 복사</button>
 </div>
 </div>
@@ -88,15 +98,44 @@ footer{padding:18px;text-align:center;font-size:12px;color:#a88f9a}
 </section>
 
 <section id="menu">
-<h2>메뉴 및 가격</h2>
+<h2>젤 메뉴 및 가격</h2>
 <p class="sub">부가세 포함 가격입니다. 디자인 난이도에 따라 추가금이 있을 수 있습니다.</p>
 <div class="menu">
-<div class="row"><div><div class="name">이달의 아트 (젤 + 스톤)</div><div class="desc">유지력 좋은 기본 젤 + 포인트 아트</div></div><div class="price">55,000원~</div></div>
-<div class="row"><div><div class="name">심플 젤 (단색·그라데이션)</div><div class="desc">깔끔한 데일리 네일</div></div><div class="price">45,000원~</div></div>
-<div class="row"><div><div class="name">프렌치 · 자석젤 · 시럽젤</div><div class="desc">트렌디 디자인 전문</div></div><div class="price">60,000원~</div></div>
+<div class="row"><div><div class="name">이달의 아트 (젤 + 스톤)</div><div class="desc">유지력 좋은 기본 젤 + 포인트 아트</div></div><div class="price">55,000~</div></div>
+<div class="row"><div><div class="name">심플 젤 (단색·그라데이션)</div><div class="desc">깔끔한 데일리 네일</div></div><div class="price">40,000~</div></div>
+<div class="row"><div><div class="name">프렌치 · 자석젤 · 시럽젤</div><div class="desc">트렌디 디자인 전문</div></div><div class="price">50,000~</div></div>
 <div class="row"><div><div class="name">웨딩 · special 케어</div><div class="desc">상담 후 맞춤 견적</div></div><div class="price">별도 문의</div></div>
-<div class="row"><div><div class="name">젤 제거 (타샵 / 자샵)</div><div class="desc">자샵 제거 무료 (시술 시)</div></div><div class="price">10,000원 / 무료</div></div>
+<div class="row"><div><div class="name">젤 제거 (타샵 / 자샵)</div><div class="desc">자샵 제거 무료 (시술 시)</div></div><div class="price">10,000 / 무료</div></div>
 </div>
+</section>
+
+<section id="care">
+<h2>케어 가격표</h2>
+<p class="sub">네일아트 없이 손·발을 정돈하는 기본 케어입니다. 젤 시술과 함께 받으시면 더 좋습니다.</p>
+<div class="menu">
+<div class="row"><div><div class="name">손 기본 케어 <span class="tag">인기</span></div><div class="desc">큐티클 정리 + 손톱 모양 + 영양 마무리 (약 30분)</div></div><div class="price">20,000</div></div>
+<div class="row"><div><div class="name">손 딥 큐티클 케어</div><div class="desc">각질 정리 + 큐티클 정밀 케어 + 보습팩 (약 50분)</div></div><div class="price">35,000</div></div>
+<div class="row"><div><div class="name">발 기본 케어</div><div class="desc">큐티클 정리 + 발톱 모양 + 발등 보습 (약 40분)</div></div><div class="price">35,000</div></div>
+<div class="row"><div><div class="name">발 딥 케어 + 각질 <span class="tag">추천</span></div><div class="desc">큐티클 + 뒤꿈치 각질 + 보습팩 + 마사지 (약 60분)</div></div><div class="price">55,000</div></div>
+<div class="row"><div><div class="name">손톱 강화 · 영양</div><div class="desc">얇고 잘 부러지는 손톱 영양 + 베이스 코트</div></div><div class="price">15,000</div></div>
+<div class="row"><div><div class="name">케어 + 젤 세트 할인</div><div class="desc">당일 케어와 젤 시술을 함께 받으면 5,000원 할인</div></div><div class="price">-5,000</div></div>
+</div>
+<div class="note"><b>안내</b> · 큐티클이 많이 올라오거나 각질이 심한 경우 추가금이 있을 수 있고, 시술 전 전화로 상담해 드립니다. 임산부·예민성 피부는 미리 말씀해 주세요.</div>
+</section>
+
+<section id="hours">
+<h2>영업시간</h2>
+<p class="sub">1:1 예약제라 방문 전 전화 예약을 부탁드립니다.</p>
+<div class="hours-box">
+<table class="hours-table">
+<tr><th>월 · 화 · 목 · 금</th><td><b>10:00 – 20:00</b> (마지막 접수 19:00)</td></tr>
+<tr><th>수요일</th><td><b>10:00 – 18:00</b> (오후 6시 이후 휴무)</td></tr>
+<tr><th>토요일</th><td><b>10:00 – 17:00</b> (주말은 조기 마감)</td></tr>
+<tr><th>일요일</th><td><span class="closed">휴무</span> (정기 휴무)</td></tr>
+<tr><th>공휴일</th><td>전화 문의 (사전 공지 확인)</td></tr>
+</table>
+</div>
+<div class="note"><b>예약 안내</b> · 당일 예약·변경·취소는 꼭 전화로 말씀해 주세요. 통화가 안 될 때는 문자 남겨주시면 순서대로 연락드립니다. 노쇼 방지를 위해 당일 취소는 다음 예약이 어려울 수 있습니다.</div>
 </section>
 
 <section id="gallery">
@@ -113,12 +152,12 @@ footer{padding:18px;text-align:center;font-size:12px;color:#a88f9a}
 </section>
 
 <section id="info">
-<h2>영업시간 · 오시는길</h2>
+<h2>오시는길</h2>
 <p class="sub">방문 전 전화로 예약 확인을 부탁드립니다.</p>
 <ul class="info">
-<li>⏰ <span>매일 10:00 – 20:00 (일요일 휴무, 예약제 운영)</span></li>
-<li>📍 <span>[주소를 넣어주세요, 예: 서울시 ○○구 ○○로 12 1층]</span></li>
-<li>📞 <span>예약 전화: <b id="telText">010-1234-5678</b></span></li>
+<li>⏰ <span>월·화·목·금 10:00–20:00 / 수 10:00–18:00 / 토 10:00–17:00 / 일 휴무</span></li>
+<li>📍 <span>[주소를 넣어주세요, 예: 서울시 ○○구 ○○로 123 2층]</span></li>
+<li>📞 <span>예약 전화: <b id="telText">010-0000-0000</b></span></li>
 <li>💬 <span>당일 예약 · 변경 · 취소는 꼭 전화로 말씀해 주세요</span></li>
 </ul>
 </section>
@@ -126,25 +165,25 @@ footer{padding:18px;text-align:center;font-size:12px;color:#a88f9a}
 <section class="reserve">
 <h2>예약은 전화로 받습니다</h2>
 <p class="sub">아래 버튼을 누르면 바로 전화가 연결됩니다.</p>
-<div class="big-tel">010-1234-5678</div>
+<div class="big-tel">010-0000-0000</div>
 <p class="tip">통화가 안 될 때는 문자 남겨주시면 순서대로 연락드립니다.</p>
 <div class="cta-row">
-<a class="btn btn-call" href="tel:010-1234-5678">📞 지금 전화하기</a>
+<a class="btn btn-call" href="tel:010-0000-0000">📞 지금 전화하기</a>
 <button class="btn btn-sub" id="copyBtn2" type="button">번호 복사하기</button>
 </div>
 </section>
 
 <div class="sticky-call">
-<a class="btn btn-call" href="tel:010-1234-5678">📞 전화 예약하기</a>
+<a class="btn btn-call" href="tel:010-0000-0000">📞 전화 예약하기</a>
 </div>
 
-<footer>© 반짝네일 · 소개 페이지 v1 · 전화 예약 전용으로 운영됩니다</footer>
+<footer>© 반짝네일 · 소개 페이지 v2 · 전화 예약 전용으로 운영됩니다</footer>
 </div>
 
 <div class="toast" id="toast">전화번호가 복사되었습니다</div>
 
 <script>
-var TEL = "010-1234-5678";
+var TEL = "010-0000-0000";
 function showToast(msg){
   var t = document.getElementById("toast");
   t.textContent = msg;
